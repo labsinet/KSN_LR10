@@ -7,31 +7,12 @@ source ./config.env
 ROOT="$SURNAME"
 
 # 9. Дерево: AAA -> DEE/GR1, SEE, SSS/GR2
-mkdir -p "$ROOT/DEE" "$ROOT/SEE" "$ROOT/SSS"
-# GR1: файл з іменем -> електронна пошта
-echo "$EMAIL" > "$ROOT/DEE/${FIRSTNAME}.txt"
-# GR2: файл з прізвищем -> група та дата
-printf '%s\n%s\n' "$GROUP" "$DATE" > "$ROOT/SSS/${SURNAME}.txt"
+<Ваш код>
 
 # 10. Копіювання файлів у кореневий каталог (AAA)
-cp "$ROOT/DEE/${FIRSTNAME}.txt" "$ROOT/"
-cp "$ROOT/SSS/${SURNAME}.txt"   "$ROOT/"
-
+<Ваш код>
 # 11. Перевірка email регулярним виразом
-RE='^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
-if grep -Eq "$RE" "$ROOT/${FIRSTNAME}.txt"; then
-  echo "[OK] У файлі ${FIRSTNAME}.txt міститься коректна електронна пошта"
-else
-  echo "[ERR] У файлі ${FIRSTNAME}.txt немає коректної електронної пошти"
-  exit 1
-fi
+<Ваш код>
 
 # 13. Помилки 404 в Apache-логах
-if [ -f "$LOGFILE" ]; then
-  PATTERN='HTTP/[0-9.]+" 404 '
-  echo "Повідомлення 404:"
-  grep -E "$PATTERN" "$LOGFILE" || true
-  echo "Кількість 404: $(grep -Ec "$PATTERN" "$LOGFILE" || true)"
-else
-  echo "[WARN] Лог-файл $LOGFILE не знайдено"
-fi
+<Ваш код>
